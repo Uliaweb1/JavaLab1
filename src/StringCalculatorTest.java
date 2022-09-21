@@ -1,4 +1,4 @@
-//Junit5 tests for stringcalculater
+//Junit5 tests for StringCalculator
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StringCalculatorTest {
