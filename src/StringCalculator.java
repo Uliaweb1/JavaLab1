@@ -2,7 +2,7 @@ public class StringCalculator {//назва програми
     private static String Metacharacters(String del) {//Екранування спеціальних символів регулярних виразів.
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < del.length(); i++) {//Цикл
-            if (".+?^*$|\\()".indexOf(del.charAt(i)) != -1){//Порівняння
+            if (".+?^*$|\\()".indexOf(del.charAt(i)) != -1){
                 result.append('\\');
             }
             result.append(del.charAt(i));
@@ -23,32 +23,27 @@ public class StringCalculator {//назва програми
     }
 
     public static int Add(String numbers){//Передаємо рядок в якому знаходяться розполільники та числа.
-        int result;
-        StringBuilder delimiter = new StringBuilder();//Спочатку він пустий
         if(numbers.length() == 0){return 0;}
-        if (numbers.toCharArray()[0] == '/' && numbers.toCharArray()[1] == '/') {
-            if(numbers.toCharArray()[2] == '[') {//рядок в масив
+        if (numbers.charAt(0) == '/' && numbers.charAt(1) == '/') {
+            StringBuilder delimiter = new StringBuilder();//Спочатку він пустий
+            if(numbers.charAt(2) == '[') {//рядок в масив
                 String[] dels = numbers.split("//|\\[|]");
                 for (int i = 0; i < dels.length - 1; ++i) {
                     if (!dels[i].equals("")) {
                         delimiter.append(Metacharacters(dels[i])).append("|");
                     }
                 }
-                String[] nums = numbers.split(delimiter + "\\[|]|//|\n|,");
-                result = Summary(nums);//розраховуємо суму
+                return Summary(numbers.split(delimiter + "\\[|]|//|\n|,"));//розраховуємо суму
             }
             else{
-                delimiter.append(numbers.toCharArray()[2]);
+                delimiter.append(numbers.charAt(2));
                 delimiter = new StringBuilder(Metacharacters(delimiter.toString()));
-                String[] nums = numbers.split(delimiter + "|//|\n|,");
-                result = Summary(nums);//розраховуємо суму
+                return Summary(numbers.split(delimiter + "|//|\n|,"));//розраховуємо суму
             }
         }
         else{
-            String[] nums = numbers.split("[,\n]");
-            result = Summary(nums);
+            return Summary(numbers.split("[,\n]"));
         }
-        return result;
     }
 
     public static void main(String[] args){//візуальна перевірка всіх тестів
