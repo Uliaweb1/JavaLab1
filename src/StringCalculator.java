@@ -15,8 +15,9 @@ public class StringCalculator {//назва програми
         for(String num : nums) {
             if (num.length() == 0) {num = "0";}
             int number_int = Integer.parseInt(num);//зчитуємо число
-            if (number_int < 0) {System.out.println("Negatives are not allowed! Invalid input: " + number_int);}
+            if (number_int < 0) {System.out.println("Помилка! Неможливий ввід негативних чисел: " + number_int);}
             else if (number_int <= 1000) {sum += number_int;}
+            else System.out.println("Ігноруються числа більше 1000: " + number_int);
         }
         return sum;//повертаємо суму.
     }
