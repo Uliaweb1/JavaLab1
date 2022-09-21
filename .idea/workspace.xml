@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05baf6cb-cb26-498b-8071-1a70260f2a5d" name="Changes" comment="improved access modifiers in class StringCalculator">
+    <list default="true" id="05baf6cb-cb26-498b-8071-1a70260f2a5d" name="Changes" comment="refactor: remove nums, remove array conversion">
       <change beforePath="$PROJECT_DIR$/src/StringCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StringCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +58,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663784677211</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="refactor: remove nums, remove array conversion">
+      <created>1663785865772</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663785865772</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -79,7 +86,8 @@
     <MESSAGE value="fixed warnings" />
     <MESSAGE value="fixed warnings in StringCalculator.java" />
     <MESSAGE value="improved access modifiers in class StringCalculator" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved access modifiers in class StringCalculator" />
+    <MESSAGE value="refactor: remove nums, remove array conversion" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove nums, remove array conversion" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Javal1$StringCalculatorTest_step6.ic" NAME="StringCalculatorTest.step6 Coverage Results" MODIFIED="1662922835309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
