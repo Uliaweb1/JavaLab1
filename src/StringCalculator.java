@@ -1,5 +1,5 @@
 public class StringCalculator {//назва програми
-    public static String Metacharacters(String del) {//Екранування спеціальних символів регулярних виразів.
+    private static String Metacharacters(String del) {//Екранування спеціальних символів регулярних виразів.
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < del.length(); i++) {//Цикл
             if (".+?^*$|\\()".indexOf(del.charAt(i)) != -1){//Порівняння
@@ -10,7 +10,7 @@ public class StringCalculator {//назва програми
         return result.toString();//Конвертація
     }
 
-    public static int Summary(String[] nums){//передаємо масив.
+    private static int Summary(String[] nums){//передаємо масив.
         int sum = 0;
         for(String num : nums) {
             if (num.length() == 0) {num = "0";}
