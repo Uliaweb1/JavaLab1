@@ -24,28 +24,28 @@ public class StringCalculator {//назва програми
 
     public static int Add(String numbers){//Передаємо рядок в якому знаходяться розполільники та числа.
         int result;
-        String delimiter = "";//Спочатку він пустий
+        StringBuilder delimiter = new StringBuilder();//Спочатку він пустий
         if(numbers.length() == 0){return 0;}
         if (numbers.toCharArray()[0] == '/' && numbers.toCharArray()[1] == '/') {
             if(numbers.toCharArray()[2] == '[') {//рядок в масив
                 String[] dels = numbers.split("//|\\[|]");
                 for (int i = 0; i < dels.length - 1; ++i) {
                     if (!dels[i].equals("")) {
-                        delimiter += Metacharacters(dels[i]) + "|";
+                        delimiter.append(Metacharacters(dels[i])).append("|");
                     }
                 }
-                String[] nums = numbers.split(delimiter + "\\[|\\]|//|\n|,");
+                String[] nums = numbers.split(delimiter + "\\[|]|//|\n|,");
                 result = Summary(nums);//розраховуємо суму
             }
             else{
-                delimiter += numbers.toCharArray()[2];
-                delimiter = Metacharacters(delimiter);
+                delimiter.append(numbers.toCharArray()[2]);
+                delimiter = new StringBuilder(Metacharacters(delimiter.toString()));
                 String[] nums = numbers.split(delimiter + "|//|\n|,");
                 result = Summary(nums);//розраховуємо суму
             }
         }
         else{
-            String[] nums = numbers.split(",|\n");
+            String[] nums = numbers.split("[,\n]");
             result = Summary(nums);
         }
         return result;
